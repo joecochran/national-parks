@@ -5,4 +5,12 @@ axios.defaults.params = {
   api_key: process.env.VUE_APP_API_KEY,
 };
 
-export default {};
+export default {
+  getParks(stateCode) {
+    return axios.get('/parks', {
+      params: {
+        stateCode,
+      },
+    });
+  },
+};
