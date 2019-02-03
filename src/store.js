@@ -26,7 +26,6 @@ export default new Vuex.Store({
       api.getParks(query).then((response) => {
         commit('setQuery', query);
         commit('setResults', response.data.data);
-        console.log(response.data.data);
       });
     },
   },

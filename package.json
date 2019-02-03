@@ -27,6 +27,7 @@
     "eslint": "^5.8.0",
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-vue": "^5.0.0",
+    "eslint-plugin-vue-a11y": "^0.0.28",
     "vue-template-compiler": "^2.5.21"
   },
   "eslintConfig": {
@@ -36,15 +37,22 @@
     },
     "extends": [
       "plugin:vue/recommended",
-      "@vue/airbnb"
+      "@vue/airbnb",
+      "plugin:vue-a11y/recommended"
     ],
     "parserOptions": {
       "parser": "babel-eslint"
     },
     "rules": {
-      "no-param-reassign": ["error", { "props": false }]
+      "no-param-reassign": [
+        "error",
+        {
+          "props": false
+        }
+      ]
     },
     "plugins": [
+      "vue-a11y",
       "prettier"
     ]
   },

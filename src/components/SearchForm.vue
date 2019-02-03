@@ -3,13 +3,17 @@
     class="is-loading"
     @submit.prevent="search"
   >
-    <input
-      type="search"
-      :disabled="isLoading"
-      name="state"
-      list="states"
-      maxlength="2"
-    >
+    <label for="state">
+      <span>State</span>
+      <input
+        id="state"
+        type="search"
+        :disabled="isLoading"
+        name="state"
+        list="states"
+        maxlength="2"
+      >
+    </label>
     <datalist id="states">
       <option
         v-for="state in states"
@@ -19,7 +23,6 @@
     </datalist>
     <button
       :disabled="isLoading"
-      @click="search"
     >
       Search
     </button>
