@@ -1,31 +1,30 @@
 <template>
   <div class="home">
     <h1>Search</h1>
-    <input type="search" v-model="query">
-    <button @click="search">Search</button>
+    <SearchForm />
     <ul>
-      <li :key="result.id" v-for="result in results">{{ result.name }}</li>
+      <li
+        v-for="result in results"
+        :key="result.id"
+      >
+        {{ result.name }}
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
+import SearchForm from '../components/SearchForm.vue';
+
 export default {
-  name: "home",
-  data: function() {
-    return {
-      query: ""
-    };
+  name: 'SearchPage',
+  components: {
+    SearchForm,
   },
   computed: {
     results() {
       return this.$store.state.searchResults;
-    }
+    },
   },
-  methods: {
-    search() {
-      this.$store.dispatch("doSearch", this.query);
-    }
-  }
-}; //this.$store.state.query
+};
 </script>

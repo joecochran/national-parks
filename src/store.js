@@ -8,6 +8,7 @@ export default new Vuex.Store({
   state: {
     stateCode: '',
     searchResults: [],
+    isLoading: false,
   },
   mutations: {
     setQuery(state, stateCode) {
@@ -15,6 +16,9 @@ export default new Vuex.Store({
     },
     setResults(state, results) {
       state.searchResults = results;
+    },
+    setLoading(state, isLoading) {
+      state.isLoading = isLoading;
     },
   },
   actions: {
