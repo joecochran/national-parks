@@ -2,24 +2,19 @@
   <div class="home">
     <h1>Search</h1>
     <SearchForm />
-    <ul>
-      <li
-        v-for="result in results"
-        :key="result.id"
-      >
-        {{ result.name }}
-      </li>
-    </ul>
+    <SearchResults />
   </div>
 </template>
 
 <script>
 import SearchForm from '../components/SearchForm.vue';
+import SearchResults from '../components/SearchResults.vue';
 
 export default {
   name: 'SearchPage',
   components: {
     SearchForm,
+    SearchResults,
   },
   computed: {
     results() {
