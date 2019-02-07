@@ -1,6 +1,6 @@
 <template>
   <form
-    class="is-loading"
+    :class="{'is-loading': isLoading}"
     @submit.prevent="search"
   >
     <label for="state">
